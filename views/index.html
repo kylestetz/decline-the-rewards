@@ -5,6 +5,17 @@
 
   </div>
   <div class="assets">
-    <img id="house" class="svg" src="/images/house.svg" />
+    <script id="prompt-template" type="text/template">
+    <div class="decision hidden">
+      <img src="/images/<%= image %>" /><!--
+   --><div class="prompt">
+        <div class="prompt-text"><%= promptText %></div>
+        <div class="decision-input">
+          <div class="accept button" data-accept>ACCEPT</div>
+          <div class="decline button" data-decline>DECLINE</div>
+        </div>
+      </div>
+    </div>
+    </script>
   </div>
 {% endblock %}

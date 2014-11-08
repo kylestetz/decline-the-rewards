@@ -15,7 +15,8 @@ var assets = {
   vendorPrefix: '/js/vendor/',
   vendor: [
     'jquery/dist/jquery.js',
-    'jquery-ui/jquery-ui.js'
+    'jquery-ui/jquery-ui.js',
+    'lodash/dist/lodash.js'
   ]
 };
 

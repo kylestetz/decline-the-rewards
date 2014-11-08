@@ -21,6 +21,7 @@
 
   "dependencies": {
     "jquery": "*",
-    "jquery-ui": "1.11.2"
+    "jquery-ui": "1.11.2",
+    "lodash": "2.4.1"
   }
 }

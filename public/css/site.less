@@ -1,8 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Karla);
+@import 'reset.less';
+
 body, html, .game
 {
   margin: 0;
   padding: 0;
   height: 100%;
+
+  font-family: Karla, sans-serif;
+  font-size: 24px;
+  color: black;
 }
 
 .assets
@@ -10,8 +17,57 @@ body, html, .game
   display: none;
 }
 
-.svg
+@width: 525px + 30px;
+
+.decision
 {
-  width: 150px;
-  height: 150px;
+  position: absolute;
+
+  width: @width;
+  // height: 150px + 30px;
+  padding: 15px;
+
+  background-color: fade(white, 50%);
+
+  img
+  {
+    float: left;
+    width: 150px;
+    height: 150px;
+  }
+
+  &.hide-prompt
+  {
+    .prompt { display: none; }
+    width: 150px + 30px;
+    background-color: transparent;
+  }
+
+
+}
+
+.prompt
+{
+  float: left;
+  width: @width - 150px - 30px;
+
+  padding-left: 2rem;
+
+  .prompt-text
+  {
+    margin-bottom: 2rem;
+  }
+}
+
+.button
+{
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+
+  border: 3px solid black;
+
+  &:hover
+  {
+    cursor: pointer;
+  }
 }
