@@ -8,61 +8,73 @@ module.exports = {
         {
           name: "car",
           prompt: "wanna car?",
-          image: "../../images/house.svg"
+          image: "../../images/car.svg"
         },
         {
           name: "insurance",
           prompt: "want car insurance?",
           incessant: true,
-          image: "../../images/house.svg"
+          image: "../../images/document-insurance.svg"
         },
         {
           name: "oil change",
           prompt: "oil change?",
           incessant: true,
-          image: "../../images/house.svg"
+          image: "../../images/oil.svg"
+        },
+        {
+          name: "buy gas",
+          prompt: "Buy Gas?",
+          incessant: true,
+          image: "../../images/gas.svg"
+        },
+        {
+          name: "registration",
+          prompt: "Update Registration",
+          incessant: true,
+          image: "../../images/document-registration.svg"
         }
       ]
     },
+    // {
+    //   pathName: "house",
+    //   items: [
+    //     {
+    //       name: "house",
+    //       prompt: "wanna house?",
+    //       image: "../../images/house.svg"
+    //     },
+    //     {
+    //       name: "add porch",
+    //       prompt: "add a porch?",
+    //       image: "../../images/house.svg"
+    //     },
+    //     {
+    //       name: "mortgage",
+    //       prompt: "pay the mortgage",
+    //       incessant: true,
+    //       image: "../../images/house.svg"
+    //     }
+    //   ]
+    // },
     {
-      pathName: "house",
+      pathName: "college",
       items: [
         {
-          name: "house",
-          prompt: "wanna house?",
-          image: "../../images/house.svg"
+          name: "college",
+          prompt: "Go to College?",
+          image: "../../images/college.svg"
         },
         {
-          name: "add porch",
-          prompt: "add a porch?",
-          image: "../../images/house.svg"
+          name: "books",
+          prompt: "Buy Books?",
+          image: "../../images/books.svg"
         },
         {
-          name: "mortgage",
-          prompt: "pay the mortgage",
+          name: "registration",
+          prompt: "Register for classes?",
           incessant: true,
-          image: "../../images/house.svg"
-        }
-      ]
-    },
-    {
-      pathName: "pez dispenser",
-      items: [
-        {
-          name: "pez dispenser",
-          prompt: "wanna pez dispenser?",
-          image: "../../images/house.svg"
-        },
-        {
-          name: "pez",
-          prompt: "add some pez?",
-          image: "../../images/house.svg"
-        },
-        {
-          name: "more pez",
-          prompt: "more pez?",
-          incessant: true,
-          image: "../../images/house.svg"
+          image: "../../images/document-registration.svg"
         }
       ]
     }

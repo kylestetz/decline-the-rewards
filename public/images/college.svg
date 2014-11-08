@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+<g id="outlines" display="none">
+	<g display="inline">
+		<path d="M140,10v130H10V10H140 M150,0H0v150h150V0L150,0z"/>
+	</g>
+</g>
+<g id="Layer_1">
+	<g>
+		<polygon fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" points="74.5,100.1 8.4,50.8 74.9,21.1 
+			141.4,50.8 		"/>
+		<circle fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" cx="74.5" cy="57.4" r="8.1"/>
+		<path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M74.3,136.9c0-21.2-17.3-38-38.3-38V71"/>
+		<path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M113.7,71.2l-0.3,26.7
+			c-21.5,0-38.3,17.3-38.3,38.5"/>
+		<polyline fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" points="81.1,62 102,78 102,133 		"/>
+	</g>
+</g>
+</svg>
