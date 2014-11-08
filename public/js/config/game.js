@@ -7,24 +7,24 @@ module.exports = {
       items: [
         {
           name: "car",
-          prompt: "wanna car?",
+          prompt: "Buy a Car",
           image: "../../images/car.svg"
         },
         {
           name: "insurance",
-          prompt: "want car insurance?",
+          prompt: "Buy Car Insurance",
           incessant: true,
           image: "../../images/document-insurance.svg"
         },
         {
           name: "oil change",
-          prompt: "oil change?",
+          prompt: "Get an Oil Change",
           incessant: true,
           image: "../../images/oil.svg"
         },
         {
           name: "buy gas",
-          prompt: "Buy Gas?",
+          prompt: "Buy Gas",
           incessant: true,
           image: "../../images/gas.svg"
         },
@@ -36,43 +36,93 @@ module.exports = {
         }
       ]
     },
-    // {
-    //   pathName: "house",
-    //   items: [
-    //     {
-    //       name: "house",
-    //       prompt: "wanna house?",
-    //       image: "../../images/house.svg"
-    //     },
-    //     {
-    //       name: "add porch",
-    //       prompt: "add a porch?",
-    //       image: "../../images/house.svg"
-    //     },
-    //     {
-    //       name: "mortgage",
-    //       prompt: "pay the mortgage",
-    //       incessant: true,
-    //       image: "../../images/house.svg"
-    //     }
-    //   ]
-    // },
+    {
+      pathName: "job",
+      items: [
+        {
+          name: "job",
+          prompt: "Accept a Job",
+          image: "../../images/stay-late.svg"
+        },
+        {
+          name: "work late",
+          prompt: "Work Late",
+          image: "../../images/stay-late.svg"
+        },
+        {
+          name: "resume",
+          prompt: "Update Resume",
+          incessant: true,
+          image: "../../images/document-registration.svg"
+        },
+        {
+          name: "network",
+          prompt: "Go to Networking Event",
+          incessant: true,
+          image: "../../images/network.svg"
+        },
+        {
+          name: "work weekend",
+          prompt: "Work the Weekend",
+          incessant: true,
+          image: "../../images/work-weekend.svg"
+        },
+        {
+          name: "raise",
+          prompt: "Accept a Raise",
+          incessant: true,
+          image: "../../images/money.svg"
+        },
+      ]
+    },
+    {
+      pathName: "house",
+      items: [
+        {
+          name: "house",
+          prompt: "Buy a House",
+          image: "../../images/house.svg"
+        },
+        {
+          name: "pool",
+          prompt: "Build a Pool",
+          image: "../../images/pool.svg"
+        },
+        {
+          name: "garage",
+          prompt: "Add a Garage",
+          image: "../../images/garage.svg"
+        },
+        {
+          name: "insurance",
+          incessant: true,
+          prompt: "Get Homeowners Insurance",
+          image: "../../images/document-insurance.svg"
+        },
+        {
+          name: "mortgage",
+          incessant: true,
+          prompt: "Pay Mortgage",
+          image: "../../images/document-mortgage.svg"
+        },      
+      ]
+    },
     {
       pathName: "college",
       items: [
         {
           name: "college",
-          prompt: "Go to College?",
+          prompt: "Go to College",
           image: "../../images/college.svg"
         },
         {
           name: "books",
-          prompt: "Buy Books?",
+          prompt: "Buy Books",
           image: "../../images/books.svg"
         },
         {
           name: "registration",
-          prompt: "Register for classes?",
+          prompt: "Register for Classes",
           incessant: true,
           image: "../../images/document-registration.svg"
         }
