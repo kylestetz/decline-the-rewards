@@ -8,19 +8,19 @@ module.exports = {
         {
           name: "car",
           prompt: "wanna car?",
-          image: "car.svg"
+          image: "../../images/house.svg"
         },
         {
           name: "insurance",
           prompt: "want car insurance?",
           incessant: true,
-          image: "insurance.svg"
+          image: "../../images/house.svg"
         },
         {
           name: "oil change",
           prompt: "oil change?",
           incessant: true,
-          image: "oil-change.svg"
+          image: "../../images/house.svg"
         }
       ]
     },
@@ -30,18 +30,39 @@ module.exports = {
         {
           name: "house",
           prompt: "wanna house?",
-          image: "house.svg"
+          image: "../../images/house.svg"
         },
         {
           name: "add porch",
           prompt: "add a porch?",
-          image: "porch.svg"
+          image: "../../images/house.svg"
         },
         {
           name: "mortgage",
           prompt: "pay the mortgage",
           incessant: true,
-          image: "mortgage.svg"
+          image: "../../images/house.svg"
+        }
+      ]
+    },
+    {
+      pathName: "pez dispenser",
+      items: [
+        {
+          name: "pez dispenser",
+          prompt: "wanna pez dispenser?",
+          image: "../../images/house.svg"
+        },
+        {
+          name: "pez",
+          prompt: "add some pez?",
+          image: "../../images/house.svg"
+        },
+        {
+          name: "more pez",
+          prompt: "more pez?",
+          incessant: true,
+          image: "../../images/house.svg"
         }
       ]
     }

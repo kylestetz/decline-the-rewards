@@ -22,6 +22,7 @@ function Decision(data) {
   self.getPosition = function() {
     if(self.onTheBoard) {
       // return draggable's position.
+      return {x: self.$el.position().left, y: self.$el.position().top};
     }
   };
 

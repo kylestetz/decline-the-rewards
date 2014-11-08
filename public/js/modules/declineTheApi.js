@@ -1,58 +1,64 @@
+(function() {
+  var Decision = require('./decision.js');
+  var config = require('../config/game.js');
+  var api = {};
 
-var Reward = require('./reward.js');
-var config = require('../config/game.js');
-var api = {};
+  var decisions = {};
 
-var paths = [];
-var acceptedPaths = [];
-var mainPos = 0;
+  api.choose = function (accept, mainIndex, sideIndex) {
+    if (accept) {
+      if (sideIndex == 0 && typeof config.paths[mainIndex + 1] != 'undefined') {
+        addMainDecision(mainIndex + 1);
+      }
+      if (typeof config.paths[mainIndex].items[sideIndex + 1] != 'undefined') {
+        addSideDecision(mainIndex, sideIndex + 1);
+      }
+    } else {
+      // maybe some alternative logic for decline
+    }
+  }
 
-// slurp the config
-for (var i in config.paths) {
-  var path = config.paths[i];
+  function addMainDecision(mainIndex) {
+    decisions[mainIndex] = [];
+    var item = config.paths[mainIndex].items[0];
 
-  var incessant = [];
-  var sequential = [];
-
-  for (var j in path.items) {
-    var item = path.items[j];
-
-    var decision = {
+    var decision = new Decision({
       prompt: item.prompt,
-      reward: new Reward(item)
-    };
+      image: item.image,
+      callback: function(accept) {
+        api.choose(accept, mainIndex, 0);
+      }
+    });
+    decisions[mainIndex].push(decision);
 
-    item.incessant ? incessant.push(decision) : sequential.push(decision);
+    decision.showPrompt();
+    console.log(decision.promptText);
   }
 
-  paths.push({
-    name: path.pathName,
-    pos: 0,
-    sequential: sequential,
-    incessant: incessant
-  });
-}
+  function addSideDecision(mainIndex, sideIndex) {
+    var item = config.paths[mainIndex].items[sideIndex];
 
-console.log(JSON.stringify(paths));
+    var decision = new Decision({
+      prompt: item.prompt,
+      image: item.image,
+      position: decisions[mainIndex][0].getPosition(),
+      callback: function(accept) {
+        api.choose(accept, mainIndex, sideIndex);
+      }
+    });
 
-api.choose = function (accept, mainIndex, sideIndex) {
-  if (accept) {
-    // give reward
-  } else {
-    // maybe some alternative logic
+    decisions[mainIndex].push(decision);
+
+    setTimeout(decision.showPrompt, getRandomInt(1000,10000));
+    console.log(decision.promptText);
   }
 
-  // if main choice, increment main path position
-  if (sideIndex == 0) {
-    mainPos++;
+  // start first decision
+  addMainDecision(0);
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  // refresh side paths
-
-}
-
-api.getMain = function () {
-  return path[mainPos][0];
-}
-
-window.declineTheApi = api;
+  window.declineTheApi = api;
+})()
