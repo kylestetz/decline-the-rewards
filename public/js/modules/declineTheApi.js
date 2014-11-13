@@ -41,7 +41,8 @@
     }
 
     if (sideIndex != 0) {
-      decisionOpts.position = decisions[mainIndex][0].getPosition();
+      decisionOpts.position = decisions[mainIndex][0].getChildPosition();
+      //console.log(decisions[mainIndex][0].getChildPosition());
     }
 
     var decision = new Decision(decisionOpts); 
