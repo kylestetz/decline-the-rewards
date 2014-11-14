@@ -11,11 +11,11 @@
   var normalMax = 5000;
 
   function choose (accept, mainIndex, sideIndex) {
+    if (sideIndex == 0 && !isUndefined(config.paths[mainIndex + 1])) {
+      // if this is a new main path decision, add the next main decision in the path
+      addDecision(mainIndex + 1, 0);
+    }
     if (accept) {
-      if (sideIndex == 0 && !isUndefined(config.paths[mainIndex + 1])) {
-        // if this is a new main path decision, add the next main decision in the path
-        addDecision(mainIndex + 1, 0);
-      }
       if (!isUndefined(config.paths[mainIndex].items[sideIndex + 1])) {
         // if this is a new decision, add the next side decision in the path
         addDecision(mainIndex, sideIndex + 1);
