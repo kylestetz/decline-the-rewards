@@ -7,13 +7,9 @@ function Decision(data) {
 
   self.$el = null;
   self.onTheBoard = false;
-  self.position = data.position || { x: window.innerWidth/2, y: window.innerHeight/2 };
+  self.position = data.position || { x: Math.random() * $game.innerWidth(), y: Math.random() * $game.innerHeight() };
 
   self.callback = data.callback;
-
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
 
   self.showPrompt = function(position) {
     // are we in the DOM already?
@@ -32,17 +28,10 @@ function Decision(data) {
 
   self.getChildPosition = function() {
     if(self.onTheBoard) {
-      var dx = 0;
-      var dy = 0;
-      var rng = getRandomInt(-1 * (self.$el.innerHeight() + self.$el.innerWidth()), self.$el.innerHeight() + self.$el.innerWidth());
-      var sign = rng > 0 ? 1 : rng == 0 ? 0 : -1; 
-      if (Math.abs(rng) > 180) {
-        dx = sign * 180;
-        dy = getRandomInt(-1 * self.$el.innerHeight(), self.$el.innerHeight());
-      } else {
-        dy = sign * 180;
-        dx = getRandomInt(-1 * self.$el.innerWidth(), self.$el.innerWidth());
-      }
+      var angle = Math.random()*Math.PI*2;
+      var dx = Math.cos(angle) * self.$el.innerWidth();
+      var dy = Math.sin(angle) * self.$el.innerHeight();
+      // return a position that is in a circumference of a small circle around the given element
       return { x: self.$el.position().left + dx, y: self.$el.position().top + dy };
     }
   }
