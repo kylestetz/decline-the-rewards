@@ -11,6 +11,10 @@ function Decision(data) {
 
   self.callback = data.callback;
 
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   self.showPrompt = function(position) {
     // are we in the DOM already?
     if(self.onTheBoard) {
@@ -25,6 +29,23 @@ function Decision(data) {
       return {x: self.$el.position().left, y: self.$el.position().top};
     }
   };
+
+  self.getChildPosition = function() {
+    if(self.onTheBoard) {
+      var dx = 0;
+      var dy = 0;
+      var rng = getRandomInt(-1 * (self.$el.innerHeight() + self.$el.innerWidth()), self.$el.innerHeight() + self.$el.innerWidth());
+      var sign = rng > 0 ? 1 : rng == 0 ? 0 : -1; 
+      if (Math.abs(rng) > 180) {
+        dx = sign * 180;
+        dy = getRandomInt(-1 * self.$el.innerHeight(), self.$el.innerHeight());
+      } else {
+        dy = sign * 180;
+        dx = getRandomInt(-1 * self.$el.innerWidth(), self.$el.innerWidth());
+      }
+      return { x: self.$el.position().left + dx, y: self.$el.position().top + dy };
+    }
+  }
 
   self.createDOMElement = function() {
     // create the template
