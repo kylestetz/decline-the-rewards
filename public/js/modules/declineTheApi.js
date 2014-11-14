@@ -4,11 +4,10 @@
   var api = {};
 
   var decisions = {};
-  var prompted = {};
   var incessantMin = 5000;
   var incessantMax = 25000;
 
-  api.choose = function (accept, mainIndex, sideIndex, incessant) {
+  api.choose = function (accept, mainIndex, sideIndex) {
     if (accept) {
       if (sideIndex == 0 && !isUndefined(config.paths[mainIndex + 1])) {
         addDecision(mainIndex + 1, 0);
@@ -17,8 +16,10 @@
         addDecision(mainIndex, sideIndex + 1);
       }
       if (!isUndefined(decisions[mainIndex][sideIndex]) && (config.paths[mainIndex].items[sideIndex].incessant)) {
-        decisions[mainIndex][sideIndex].callback = function() {setTimeout(decisions[mainIndex][sideIndex].showPrompt, getRandomInt(incessantMin,incessantMax))};
-        setTimeout(decisions[mainIndex][sideIndex].showPrompt, getRandomInt(incessantMin,incessantMax));
+        decisions[mainIndex][sideIndex].callback = function() {
+          setTimeout(decisions[mainIndex][sideIndex].showPrompt, getRandomInt(incessantMin,incessantMax))
+        };
+        decisions[mainIndex][sideIndex].callback();
       }
 
     } else {
