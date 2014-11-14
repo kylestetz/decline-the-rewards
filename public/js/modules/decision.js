@@ -19,6 +19,12 @@ function Decision(data) {
     }
   };
 
+  self.showItem = function() {
+    if(self.onTheBoard) {
+      self.$el.toggleClass('decision--hide', false);
+    }
+  }
+
   self.getPosition = function() {
     if(self.onTheBoard) {
       // return draggable's position.
